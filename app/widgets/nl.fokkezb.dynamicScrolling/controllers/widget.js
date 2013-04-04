@@ -83,8 +83,7 @@ function doScroll(e) {
 	var triggerLoad;
 	
 	if (OS_ANDROID) {
-		triggerLoad = (item && e.firstVisibleItem > item) && (e.totalItemCount < e.firstVisibleItem + e.visibleItemCount);
-		item = e.firstVisibleItem;
+		triggerLoad = (e.totalItemCount < e.firstVisibleItem + e.visibleItemCount + 5);
 	
 	} else if (OS_IOS) {
 		triggerLoad = (offset && e.contentOffset.y > offset) && (e.contentOffset.y + e.size.height > e.contentSize.height);
